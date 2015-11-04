@@ -14,6 +14,13 @@ class LoginView: UIView {
     @IBOutlet weak var rightImage: UIImageView!
     @IBOutlet weak var leftImage: UIImageView!
     @IBOutlet weak var text: UITextField!
+    
+    // MARK: Initialization
+   
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -21,5 +28,11 @@ class LoginView: UIView {
         // Drawing code
     }
     */
+  
+    
+    func setLoginView(imageLeft: String, imageRight: String, isPwd: Bool){
+        self.leftImage.image = UIImage(named: imageLeft)
+        self.rightImage.image = UIImage(named: imageRight)
+    }
 
 }
